@@ -1,0 +1,10 @@
+html,
+body,
+#app {
+  height: 100%;
+  user-select: none;
+}
+
+.icon {
+  display: inline-block;
+}
