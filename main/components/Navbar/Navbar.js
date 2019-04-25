@@ -10,17 +10,17 @@ const data = [
       {
         id: "a3",
         name: "角色管理",
-        url: "http://push.yueniucj.com/pages/system/role/index.html"
+        url: "http://www.qq.com"
       },
       {
         id: "a4",
         name: "菜单管理",
-        url: "http://push.yueniucj.com/pages/system/menu/index.html"
+        url: "http://www.sina.com"
       },
       {
         id: "a5",
         name: "部门管理",
-        url: "http://push.yueniucj.com/pages/system/organ/index.html"
+        url: "http://www.ifeng.com"
       }
     ]
   }
