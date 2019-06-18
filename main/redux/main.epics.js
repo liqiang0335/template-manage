@@ -1,4 +1,4 @@
-import { from, of } from "rxjs";
+import { from, pipe } from "rxjs";
 import { switchMap, map, tap, catchError } from "rxjs/operators";
 import { ofType, combineEpics } from "redux-observable";
 import * as main from "./main.actions";
@@ -11,6 +11,17 @@ import {
 
 import * as api from "./api";
 import { message } from "antd";
+
+const ajax = (api, success, error) => {
+  return pipe(
+    switchMap(() =>
+      from(api).pipe(
+        map(res => success(res)),
+        catchError(() => error())
+      )
+    )
+  );
+};
 
 /**
  * 登录用户信息

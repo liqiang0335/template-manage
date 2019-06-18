@@ -6,8 +6,6 @@ export const Logout = createAction(LOGOUT);
 export const LOGOUT_SUCCESS = "LOGOUT_SUCCESS";
 export const LogoutSuccess = createAction(LOGOUT_SUCCESS);
 
-const init = {
-  menus: []
-};
+const init = {};
 
 export default handleActions({}, init);
