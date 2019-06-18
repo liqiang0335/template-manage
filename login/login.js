@@ -1,63 +1,29 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { Input, Button, message } from "antd";
-import http from "../../lib/http";
+import { HashRouter, Route } from "react-router-dom";
+
 import "ynw/style/reset.css";
-import "./style/login.scss";
+import "./style/common.scss";
+import "../common/style/icomoon/style.css";
 
-const App = function() {
-  const [pass, setPass] = React.useState("");
-  const [name, setName] = React.useState("");
+import Login from "./container/Login";
+import Register from "./container/Register";
+import Forget from "./container/Forget";
+import Foreign from "./container/Foreign";
 
-  const submit = async () => {
-    if (!name) {
-      message.error("请输入账号");
-      return;
-    }
-    if (!pass) {
-      message.error("请输入密码");
-      return;
-    }
-
-    const res = await http.post("/system/login", {
-      userName: name,
-      password: pass
-    });
-    message.success("登录成功");
-    const token = res.token;
-    localStorage.wxAutoAddToken = token;
-    window.location.href = "../app/index.html";
-  };
-
+function App() {
   return (
-    <div className="login flex grow">
-      <div className="box flex column">
-        <h1>登录微信助手</h1>
-        <div className="contents flex column">
-          <div className="form-item">
-            <Input
-              value={name}
-              addonBefore="账号"
-              size="large"
-              onChange={e => setName(e.target.value)}
-            />
-          </div>
-          <div className="form-item">
-            <Input
-              type="password"
-              value={pass}
-              addonBefore="密码"
-              size="large"
-              onChange={e => setPass(e.target.value)}
-            />
-          </div>
-          <Button type="primary" size="large" onClick={submit}>
-            提交
-          </Button>
+    <HashRouter>
+      <div className="app flex grow">
+        <div className="box flex column">
+          <Route exact path="/" component={Login} />
+          <Route exact path="/register" component={Register} />
+          <Route exact path="/forget" component={Forget} />
+          <Route exact path="/foreign" component={Foreign} />
         </div>
       </div>
-    </div>
+    </HashRouter>
   );
-};
+}
 
 ReactDOM.render(<App />, document.getElementById("app"));

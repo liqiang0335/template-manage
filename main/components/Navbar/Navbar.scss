@@ -1,55 +1,6 @@
 .container {
   width: 200px;
-  background: #363F4F;
+  background: #363f4f;
   color: white;
-}
-
-.logo {
-  height: 100px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: rgb(134, 140, 153);
-  font-size: 18px;
-}
-
-.group {
-  border-bottom: 1px solid rgb(71, 81, 98);
-}
-
-.name1 {
-  font-size: 14px;
-  padding: 10px 20px;
-  cursor: pointer;
-  color: white;
-  display: flex;
-  position: relative;
-  font-weight: bold;
-}
-
-.icon1 {
-  position: relative;
-  top: 3px;
-  margin-right: 8px;
-}
-
-.children {
-  flex-direction: column;
-}
-
-.name2 {
-  @extend .name1;
-  padding-left: 40px;
-  font-weight: normal;
-
-  &:hover {
-    background: #283240;
-  }
-}
-
-.icon2 {
-  font-size: 18px;
-  position: absolute;
-  right: 10px;
-  top: 10px;
+  user-select: none;
 }

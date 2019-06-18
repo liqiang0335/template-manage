@@ -1,6 +1,6 @@
 const Qs = require("querystring");
-const axios = require("module/axios");
-import { message } from "module/antd";
+const axios = require("axios");
+import { message } from "antd";
 
 import BaseUrl from "../constant/baseUrl";
 import ErrorCodes from "../constant/ErrorCodes";
@@ -8,6 +8,7 @@ import ErrorCodes from "../constant/ErrorCodes";
 const http = axios.create({
   baseURL: BaseUrl,
   timeout: 30000,
+  withCredentials: true,
   headers: {
     "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8"
   },
@@ -33,12 +34,18 @@ http.interceptors.response.use(
    */
   function(res) {
     const body = res.data;
-    if (body.status != 1) {
-      const msg = ErrorCodes[body.status]
-        ? ErrorCodes[body.status]
-        : body.status;
-      message.error("错误: " + msg);
-      return Promise.reject();
+
+    //拦截登录错误码
+    if (body.code == 10002) {
+      window.location.href = "/platform/login.html";
+    }
+
+    if (res.config.interceptor === false) {
+      return Promise.resolve(res.data);
+    }
+    if (body.code != 1) {
+      message.error(ErrorCodes[body.code] || body.message || body.code);
+      return Promise.reject(body);
     }
     // 处理服务器返回的数据
     return Promise.resolve(body.data);

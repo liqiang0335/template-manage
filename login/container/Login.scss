@@ -1,0 +1,17 @@
+.login {
+  margin: 40px 80px;
+  .form-item {
+    margin: 10px 0;
+  }
+
+  button {
+    margin-top: 30px;
+  }
+  .bottom {
+    margin-top: 10px;
+    .forget {
+      color: $color;
+      cursor: pointer;
+    }
+  }
+}

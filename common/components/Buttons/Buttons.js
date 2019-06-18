@@ -3,7 +3,7 @@ import { Button } from "antd";
 
 export function NewButton(prop) {
   return (
-    <Button type="primary" style={{ margin: "0 5px" }} {...prop}>
+    <Button type="primary" style={{ marginRight: "10px" }} {...prop}>
       新增
     </Button>
   );
@@ -14,7 +14,7 @@ export function EditButton(prop) {
     <Button
       type="primary"
       style={{
-        margin: "0 5px",
+        marginRight: "10px",
         background: "rgb(0, 187, 0)",
         borderColor: "rgb(0, 187, 0)"
       }}
@@ -25,19 +25,19 @@ export function EditButton(prop) {
   );
 }
 
-export function DeleteButton(prop) {
+export function DeleteButton({ onClick, text = "删除" }) {
   return (
     <Button
       type="danger"
       style={{
-        margin: "0 5px",
-        background: "rgb(255, 91, 48)",
-        borderColor: "rgb(255, 91, 48)",
+        marginRight: "10px",
+        background: "rgb(255, 63, 13)",
+        borderColor: "rgb(255, 63, 13)",
         color: "white"
       }}
-      {...prop}
+      onClick={onClick}
     >
-      删除
+      {text}
     </Button>
   );
 }

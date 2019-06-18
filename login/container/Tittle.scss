@@ -1,0 +1,20 @@
+.title-1 {
+  text-align: center;
+  position: relative;
+  font-size: 25px;
+  letter-spacing: 1px;
+  text-align: center;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+  .link {
+    cursor: pointer;
+    padding: 0 35px;
+    color: rgb(85, 85, 85);
+    &.active {
+      color: $color;
+    }
+  }
+  .alink {
+    border-right: 1px solid gray;
+  }
+}

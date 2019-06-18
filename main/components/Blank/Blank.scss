@@ -1,0 +1,22 @@
+$color: rgb(200, 200, 200);
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  height: 100%;
+  flex-direction: column;
+}
+
+.name {
+  font-size: 25px;
+  letter-spacing: 2px;
+  color: $color;
+}
+
+.encourage {
+  font-size: 17px;
+  color: $color;
+  margin-top: 10px;
+}

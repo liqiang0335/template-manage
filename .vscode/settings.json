@@ -1,0 +1,11 @@
+{
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "css": true,
+    "fonts": true,
+    "img": true,
+    "js": true,
+    "**/.DS_Store": true
+  }
+}

@@ -1,20 +1,56 @@
 .container {
   height: $topHeight;
-  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 15px rgba(147, 147, 147, 0.1);
   display: flex;
   align-items: center;
-  color: white;
+  background: white;
+  width: 100%;
   position: absolute;
   top: 0;
   left: 0;
-  background: white;
-  width: 100%;
   flex-shrink: 0;
   border-bottom: 1px solid rgb(236, 236, 236);
+  user-select: none;
+}
+.menus {
+  padding: 0 10px;
 }
 
-.logo {
-  font-size: 17px;
-  margin-left: 20px;
-  letter-spacing: 1px;
+.menu {
+  padding: 5px 5px 5px 5px;
+  border: 1px solid rgb(223, 223, 223);
+  margin: 0 5px;
+  cursor: pointer;
+  border-radius: 2px;
+}
+
+:global {
+  .topbar-menu {
+    color: gray;
+    &.active {
+      background: $color;
+      border-color: $color;
+      color: white;
+    }
+  }
+}
+
+.name {
+  padding-left: 5px;
+  padding-right: 10px;
+}
+
+.avatar {
+  margin-right: 40px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  .userName {
+    margin-left: 5px;
+  }
+}
+
+.dropMenu {
+  width: 160px;
+  text-align: center;
 }

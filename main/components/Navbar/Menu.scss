@@ -1,0 +1,55 @@
+.node {
+  background: #313a4a;
+}
+
+.children {
+  flex-direction: column;
+}
+.name {
+  cursor: pointer;
+  color: white;
+  padding: 12px 55px;
+  border-left: 4px solid transparent;
+  position: relative;
+}
+.indicate {
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  display: block;
+  color: white;
+  font-size: 20px;
+}
+.icon {
+  position: absolute;
+  left: 30px;
+  top: 13px;
+  font-size: 16px;
+}
+
+:global {
+  .menu-children {
+    display: none;
+  }
+  .icon-expand_less {
+    transition: transform 0.3s;
+  }
+  .menu-parent {
+    &.show {
+      & + .menu-children {
+        display: flex;
+      }
+      .icon-expand_less {
+        transform: rotate(180deg);
+        transition: transform 0.3s;
+      }
+    }
+  }
+  .active {
+    .menu-sub-name {
+      color: $color;
+      border-left-color: $color;
+      background: rgb(41, 49, 61);
+    }
+  }
+}
