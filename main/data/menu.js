@@ -18,6 +18,11 @@ export default [
       },
       {
         id: createId(),
+        name: "权限管理",
+        url: "/system/user"
+      },
+      {
+        id: createId(),
         name: "操作日志",
         url: "/system/log"
       }
