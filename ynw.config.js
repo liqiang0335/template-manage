@@ -18,10 +18,14 @@ module.exports = {
     devServer: {}, //webpack-dev-server 选项
     port: 9999, //热更新模式服务器的端口
     analyzer: false, //生成打包报告(仅生产环境)
-    alias: {}, //自动指定了"@"为项目打包目录的别名
-    //在测试环境中自动在PublicPath前添加的前缀
-    //生产环境(env=pro)会自动去掉
-    //如果命令行中使用了"epath"会强制添加
+    alias: {
+      "@store": "./main/store",
+      "@script": "./main/script",
+      "@compnents": "./module/components",
+      "@comps": "./main/component",
+      "@const": "./main/constant",
+      "@hook": "./main/hook"
+    },
     envPrefix: "",
     extractCSS: false, //提取CSS到单独文件(仅生产环境)
     splitModules: false, //分离第三方模块到单独文件(仅生产环境)
