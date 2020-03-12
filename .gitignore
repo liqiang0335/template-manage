@@ -2,10 +2,5 @@ node_modules
 .DS_Store
 .svn
 dist
-/css
-/fonts
-/js
-/demo
-images
-assets
 .vscode
+dev.html
