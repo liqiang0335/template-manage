@@ -1,0 +1,9 @@
+@import "./config/var.scss";
+
+.container {
+  height: $logo-height;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 17px;
+}

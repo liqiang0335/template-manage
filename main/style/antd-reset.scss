@@ -1,0 +1,54 @@
+:global {
+  #app {
+    .ant-table-thead th {
+      background: #03595f;
+      color: white;
+      padding: 8px 0;
+      font-size: 13px;
+      text-align: center;
+      letter-spacing: 1px;
+    }
+    .ant-form-explain {
+      display: none;
+    }
+    .ant-modal-header {
+      background: #f2f2f2;
+    }
+    .ant-form-item,
+    .ant-table-body {
+      margin: 0;
+    }
+    td {
+      background: white;
+      font-size: 14px;
+    }
+    tr.ant-table-row.sum td {
+      background-color: #d2d5e9;
+      border-top: 2px solid #a6abc9;
+      border-bottom: 1px solid #a6abc9;
+      border-color: #c0c4da;
+    }
+    tr:nth-child(2n) > td {
+      background: rgb(245, 245, 245);
+    }
+    tr:nth-child(2n):hover > td {
+      background: rgb(245, 245, 245);
+    }
+    tr.ant-table-row.ant-table-row-selected td {
+      background: #dcd5ff;
+    }
+
+    .ant-table-footer {
+      background: #d7d4e4;
+    }
+
+    .active,
+    .menu-active {
+      background: #a06095;
+      border-color: #a06095;
+      color: white;
+    }
+
+    //// END ////
+  }
+}
