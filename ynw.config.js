@@ -23,17 +23,21 @@ module.exports = {
     //生产环境(env=pro)会自动去掉
     //如果命令行中使用了"epath"会强制添加
     envPrefix: "",
-    extractCSS: true, //提取CSS到单独文件(仅生产环境)
+    extractCSS: false, //提取CSS到单独文件(仅生产环境)
     splitModules: false, //分离第三方模块到单独文件(仅生产环境)
-    cssModules: true, //是否启用CSSModules(仅.scss类型文件)
+    cssModules: false, //是否启用CSSModules(仅.scss类型文件)
     dllPath: "", //指定使用的dll库(manifest的文件夹路径)
     themePath: "", //指定antd主题文件路径
     dist: "", //输出目录:默认当前项目下dist文件夹
-    copy: [], //复制文件{from,to}
-    publicPath: ""
+    copy: [] //复制文件{from,to}
   },
   /**
    * keys下面的字段为具体的配置项(会覆盖相应的通用配置项)
    */
-  pages: {}
+  pages: {
+    // 示例: demo为项目文件夹的名称
+    demo: {
+      extractCSS: true
+    }
+  }
 };
