@@ -3,6 +3,7 @@ import { DownOutlined } from "@ant-design/icons";
 import styles from "./Menu.scss";
 import Logo from "./Logo";
 import MenuData from "./config/MenuData";
+import { NavLink } from "react-router-dom";
 /**
  * 菜单栏
  */
@@ -20,20 +21,33 @@ export default function Menu() {
  * 树组件
  */
 function Tree({ data, layer }) {
-  const showChild = e => {
-    e.target.classList.add(styles.active);
+  const showChild = (e, layer) => {
+    if (layer === 0) {
+      e.target.classList.toggle(styles.spread);
+    }
   };
 
-  const getItemClass = () => {
-    return [styles.item, styles[`layer-${layer}`]].join(" ");
+  const Link = ({ to, onClick, children }) => {
+    if (to) {
+      return (
+        <NavLink className={styles.item} to={to} activeClassName="actived">
+          {children}
+        </NavLink>
+      );
+    }
+    return (
+      <div className={styles.item} onClick={onClick}>
+        {children}
+      </div>
+    );
   };
 
   return data.map((item, i) => (
     <div className={styles.node} key={item.key}>
-      <div className={getItemClass()} onClick={showChild}>
+      <Link to={item.to} onClick={e => showChild(e, layer)}>
         <span className={styles.name}> {item.name}</span>
         <Arrow item={item} />
-      </div>
+      </Link>
       <div className={styles.children}>
         {item.children && (
           <div className={styles.child}>

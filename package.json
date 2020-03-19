@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "",
   "scripts": {
-    "test": "jest"
+    "hot": "ynw build=main entry=main/main env=hot"
   },
   "author": "liqiang0335@qq.com",
   "license": "ISC",
