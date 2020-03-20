@@ -1,14 +1,18 @@
 .container {
   background-color: white;
   height: $header-height;
-  box-shadow: 0px 2px 8px 0 rgba(29, 35, 41, 0.05);
   display: flex;
   position: fixed;
-  left: $menu-width;
   top: 0;
+  left: 0;
   width: 100%;
   align-items: center;
   padding: 0 20px;
+  box-sizing: border-box;
+  box-shadow: 0px 2px 8px 0 rgba(29, 35, 41, 0.05);
+}
+.placeholder {
+  width: $menu-width;
 }
 .title {
   font-size: 14px;

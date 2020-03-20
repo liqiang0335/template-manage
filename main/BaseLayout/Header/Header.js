@@ -5,8 +5,8 @@ import Account from "../Account/Account";
 export default function Header() {
   return (
     <div className={styles.container}>
-      <div className={styles.title}>222</div>
-      <div style={{ flex: 1 }}></div>
+      <div className={styles.placeholder}></div>
+      <div className={styles.title}></div>
       <Account />
     </div>
   );

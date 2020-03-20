@@ -1,7 +1,7 @@
 import React from "react";
 import { DownOutlined } from "@ant-design/icons";
 import css from "./Menu.scss";
-import Logo from "./Logo";
+import Logo from "../Logo/Logo";
 import MenuData from "../../config/Menus";
 import { NavLink } from "react-router-dom";
 /**
