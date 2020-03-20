@@ -1,25 +1,16 @@
+import * as Routes from "../../constant/Routes";
+
 export default [
   {
-    name: "列表-1",
-    key: "01",
+    name: "用户管理",
     children: [
       {
-        name: "子列表01",
-        key: "02"
+        name: "项目人员",
+        to: Routes.UserList
       },
       {
-        name: "子列表02",
-        key: "03"
-      }
-    ]
-  },
-  {
-    name: "列表页-2",
-    key: "04",
-    children: [
-      {
-        name: "子列表",
-        key: "05"
+        name: "角色管理",
+        to: Routes.UserRole
       }
     ]
   }
