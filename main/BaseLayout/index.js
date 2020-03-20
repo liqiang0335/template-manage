@@ -1,8 +1,8 @@
 import "ynw/style/reset.css";
 import React from "react";
 import styles from "./index.scss";
-import Header from "./Header";
-import Menu from "./Menu";
+import Header from "./Header/Header";
+import Menu from "./Menu/Menu";
 import { HashRouter } from "react-router-dom";
 /**
  * 顶部
