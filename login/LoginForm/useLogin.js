@@ -14,7 +14,6 @@ const reducer = (state, action) => {
 /**
  * 用户登录逻辑
  * @param {Function=>Promise} submiter - ajax
- * @param {Function} onOk - 回调(存储Token/跳转等)
  * @param {String, Optional} nameKey - name 字段的名称
  * @param {Function, Optional} passKey - pass  字段的的名称
  *
@@ -22,7 +21,6 @@ const reducer = (state, action) => {
  */
 export default function useLogin({
   submiter,
-  onOk,
   nameKey = "name",
   passKey = "pass"
 }) {
@@ -45,12 +43,9 @@ export default function useLogin({
     if (!pass) return message.error("请填写密码");
 
     submiter({ [nameKey]: name.trim(), [passKey]: pass.trim() })
-      .then(res => {
+      .then(() => {
         localStorage[nameKey] = name;
         localStorage[passKey] = remember ? pass : "";
-        setTimeout(() => {
-          onOk(res);
-        }, 300);
       })
       // eslint-disable-next-line no-console
       .catch(err => console.log(err));

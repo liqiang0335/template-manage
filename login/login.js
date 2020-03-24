@@ -1,21 +1,22 @@
+/* eslint-disable no-console */
 import "ynw/style/reset.css";
 import React from "react";
 import ReactDOM from "react-dom";
 import LoginForm from "./LoginForm/LoginForm";
-// import axios from "axios";
+import axios from "axios";
 
 const App = () => {
   return (
     <LoginForm
+      nameKey="account"
       submiter={async params => {
         console.log("App -> params", params);
-        // post data to server
-        return { token: "Hello" };
-      }}
-      onOk={res => {
-        console.log("App -> res", res);
-        // save toke
-        // goto main page
+        return axios.post("url", params).then(res => {
+          console.log(res);
+          // post data to server
+          // save toke
+          // goto main page
+        });
       }}
     />
   );
