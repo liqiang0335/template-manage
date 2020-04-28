@@ -1,13 +1,12 @@
-$color: rgb(0, 128, 255);
+// Color
+$color: #435ba3;
 $orange: rgb(255, 100, 0);
 $shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
-$topHeight: 52px;
+$menu-width: 236px;
+$active-bg-color: #e3e9ee;
 $border: 1px solid rgb(235, 235, 235);
 
-$primary: rgb(24, 73, 235);
+// Size
+$topHeight: 52px;
 $header-height: 60px;
 $logo-height: 80px;
-
-$menu-width: 256px;
-$menu-active-bg-color: #e6f7ff;
-$menu-active-color: #1890ff;

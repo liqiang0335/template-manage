@@ -4,6 +4,7 @@ import css from "./Menu.scss";
 import Logo from "../Logo/Logo";
 import MenuData from "../../config/Menus";
 import { NavLink } from "react-router-dom";
+import * as Icons from "@ant-design/icons";
 /**
  * 菜单栏
  */
@@ -40,10 +41,27 @@ function Tree({ data, layer }) {
     );
   };
 
+  // 图标
+  const MenuIcon = ({ item }) => {
+    if (item.icon) {
+      return <Icon name={item.icon} layer={layer} />;
+    }
+    return null;
+  };
+
+  const Prefix = ({ item }) => {
+    if (item.icon) return null;
+    return <span style={{ fontSize: "12px" }}>﹣ </span>;
+  };
+
   return data.map((item, i) => (
     <div className={css.node} key={i}>
       <Link to={item.to}>
-        <span className={css.name}> {item.name}</span>
+        <MenuIcon item={item} i={i} />
+        <span className={css.name}>
+          <Prefix item={item} />
+          {item.name}
+        </span>
         <Arrow item={item} />
       </Link>
       <div className={css.children}>
@@ -64,4 +82,16 @@ function Arrow({ item }) {
     return <DownOutlined className={css.icon} />;
   }
   return null;
+}
+
+function Icon({ name, layer }) {
+  if (layer > 0) return null;
+  if (!Icons[name]) return null;
+
+  const Icon = Icons[name];
+  return (
+    <div className={css.sign}>
+      <Icon />
+    </div>
+  );
 }

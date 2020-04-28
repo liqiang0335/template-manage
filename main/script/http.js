@@ -1,44 +1,45 @@
-import createhttp from "./createhttp";
-import { message, notification } from "antd";
-import { baseURL } from "../constant/Host";
+/* eslint-disable no-console */
+import { notification } from "antd";
+import axios from "axios";
+/**
+ * HTTP
+ */
+const http = axios.create({ baseURL: "/", timeout: 30000 });
+export default http;
 
-const http = createhttp({
-  baseURL,
-  timeout: 50000,
-  onRequest(config) {
-    if (window.token) {
-      config.headers.token = window.token;
-    }
-    if (config.method === "post") {
-      config.data = config.data || {};
-    }
-    return config;
-  },
-  onSuccess(body) {
-    if (body.code === 1) {
-      return [body.data, null];
-    }
-    message.error(body.message, 6);
-    return [null, body.code];
-  },
-  onTimeout(err) {
-    const { url } = err.response.config;
-    notification.error({
-      placement: "bottomLeft",
-      duration: 0,
-      message: "请求超时",
-      description: `当请求"${url}"接口时出现超时,请确认网略连接是否正常`
-    });
-  },
-  onError(status, err) {
-    const { url } = err.response.config;
-    notification.error({
-      placement: "bottomLeft",
-      duration: 0,
-      message: `服务出现错误`,
-      description: `请求接口 ${url} 时出现错误状态码为${status}`
-    });
+// 拦截请求
+http.interceptors.request.use(config => {
+  config.data = config.data || {};
+  config.params = config.params || {};
+  if (window.token) {
+    config.headers.token = window.token;
   }
+  return config;
 });
 
-export default http;
+// 拦截响应
+http.interceptors.response.use(
+  function(res) {
+    return res.data;
+  },
+  function(err) {
+    if (err.response) {
+      const { config, status } = err.response;
+      notification.error({
+        placement: "topRight",
+        duration: 6000,
+        message: `服务错误: ${status}`,
+        description: `${config.url}`,
+      });
+    }
+    if (err.code === "ECONNABORTED") {
+      notification.error({
+        placement: "bottomLeft",
+        duration: 6000,
+        message: "请求超时",
+        description: `请确认网略连接是否正常`,
+      });
+    }
+    return Promise.reject(err);
+  }
+);
