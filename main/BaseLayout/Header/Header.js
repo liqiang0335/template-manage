@@ -6,7 +6,7 @@ export default function Header() {
   return (
     <div className={styles.container}>
       <div className={styles.placeholder}></div>
-      <div className={styles.title}></div>
+      <div className={styles.title}>Hello</div>
       <Account />
     </div>
   );

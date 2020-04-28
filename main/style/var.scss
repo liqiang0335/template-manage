@@ -1,12 +1,25 @@
 // Color
 $color: #435ba3;
 $orange: rgb(255, 100, 0);
-$shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+
+// layout
 $menu-width: 236px;
-$active-bg-color: #e3e9ee;
+$topHeight: 52px;
+$header-height: 70px;
+$logo-height: 80px;
+$header-zIndex: 99;
+$menu-zIndex: 100;
+
+// common
+$shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
 $border: 1px solid rgb(235, 235, 235);
 
-// Size
-$topHeight: 52px;
-$header-height: 60px;
-$logo-height: 80px;
+// THEME
+$header-bg-color: rgb(255, 255, 255);
+$header-text-color: rgb(0, 0, 0);
+$menu-bg-color: rgb(255, 255, 255);
+$menu-text-color: rgb(0, 0, 0);
+$menu-spread-bg-color: rgb(243, 243, 243);
+$menu-active-bg-color: #105b99;
+$menu-active-text-color: #f78400;
+$workspace-bg-color: rgb(240, 240, 240);

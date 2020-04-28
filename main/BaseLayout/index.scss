@@ -12,7 +12,6 @@
     display: flex;
   }
 }
-
 .container {
   display: flex;
   flex: 1;
@@ -29,8 +28,8 @@
 
 .contents {
   padding: 20px;
-  background: #f0f2f5;
-  flex: 1;
+  background: $workspace-bg-color;
   padding-top: $header-height + 10px;
+  flex: 1;
   padding-right: 30px;
 }

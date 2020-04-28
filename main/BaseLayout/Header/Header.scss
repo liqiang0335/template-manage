@@ -1,5 +1,5 @@
 .container {
-  background-color: white;
+  background-color: $header-bg-color;
   height: $header-height;
   display: flex;
   position: fixed;
@@ -10,7 +10,8 @@
   padding: 0 20px;
   box-sizing: border-box;
   box-shadow: 0px 2px 8px 0 rgba(29, 35, 41, 0.05);
-  z-index: 100;
+  z-index: $header-zIndex;
+  color: $header-text-color;
 }
 .placeholder {
   width: $menu-width;

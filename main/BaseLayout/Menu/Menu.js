@@ -1,18 +1,21 @@
 import React from "react";
 import { DownOutlined } from "@ant-design/icons";
 import css from "./Menu.scss";
-import Logo from "../Logo/Logo";
 import MenuData from "../../config/Menus";
 import { NavLink } from "react-router-dom";
 import * as Icons from "@ant-design/icons";
+import Logo from "../Logo/Logo";
+
 /**
  * 菜单栏
  */
 export default function Menu() {
   return (
     <div className={css.container}>
-      <Logo />
-      <div className={css.contenst}>
+      <div className={css.logobar}>
+        <Logo />
+      </div>
+      <div className={css.contents}>
         <Tree data={MenuData} layer={0} />
       </div>
     </div>
