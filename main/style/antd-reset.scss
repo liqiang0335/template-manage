@@ -1,4 +1,17 @@
 :global {
+  // 表单错误提示栏
+  .ant-form-item {
+    margin-bottom: 0 !important;
+  }
+  .ant-form-explain {
+    display: none !important;
+  }
+  .ant-form-item-explain {
+    display: none !important;
+  }
+  .ant-form-item-control {
+    margin-bottom: 8px;
+  }
   .ant-table-thead th {
     background: #03595f;
     color: white;
@@ -7,9 +20,7 @@
     text-align: center;
     letter-spacing: 1px;
   }
-  .ant-form-explain {
-    display: none;
-  }
+
   .ant-modal-header {
     background: #f2f2f2;
   }

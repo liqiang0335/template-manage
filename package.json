@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "",
   "scripts": {
-    "hot": "ynw build=main entry=main/main env=hot"
+    "hot": "npx ynw build=main entry=main/main env=hot"
   },
   "author": "liqiang0335@qq.com",
   "license": "ISC",
@@ -11,10 +11,7 @@
     "antd": "latest",
     "@ant-design/icons": "latest",
     "axios": "latest",
-    "classnames": "latest",
-    "date-fns": "latest",
     "dayjs": "latest",
-    "localforage": "latest",
     "lodash": "latest",
     "prop-types": "latest",
     "querystring": "latest",
@@ -25,7 +22,6 @@
     "react-router": "latest",
     "react-router-dom": "latest",
     "redux": "latest",
-    "redux-observable": "latest",
     "rxjs": "latest",
     "styled-components": "latest",
     "core-js": "latest",
@@ -95,6 +91,7 @@
     "webpack-node-externals": "^1.7.2",
     "webpack-bundle-analyzer": "latest",
     "copy-webpack-plugin": "latest",
+    "ynw-cli": "latest",
     "ynw-loader": "latest"
   }
 }
