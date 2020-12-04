@@ -2,13 +2,15 @@ import React from "react";
 import styles from "./LoginForm.scss";
 import { Input, Button, Checkbox } from "antd";
 import useLogin from "./useLogin";
+import bg from "../assets/bg.png";
+
 /**
- *
+ * 登录表单
  */
 export default function LoginForm(props) {
   const { state, dispatch, submit } = useLogin(props);
   return (
-    <div className={styles.container}>
+    <div className={styles.container} style={{ backgroundImage: `url(${bg})` }}>
       <div className={styles.box}>
         <div className={styles.title}>登录系统</div>
         <div className={styles.line}>
