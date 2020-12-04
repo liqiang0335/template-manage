@@ -2,6 +2,7 @@ module.exports = {
   common: {
     targets: { browsers: ["ie >= 11"] },
     target: "web",
+    createDev: false,
     externals: {},
     port: 9999,
     analyzer: false,
