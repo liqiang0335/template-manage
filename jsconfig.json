@@ -8,7 +8,6 @@
     "baseUrl": "",
     "paths": {
       "@store/*": ["./main/store/*"],
-      "@compnents/*": ["./module/components/*"],
       "@comps/*": ["./main/component/*"],
       "@script/*": ["./main/script/*"],
       "@const/*": ["./main/constant/*"],

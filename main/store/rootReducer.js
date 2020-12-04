@@ -1,7 +1,6 @@
 import { combineReducers } from "redux";
 import * as Types from "@store/Types";
 import cloneDeep from "lodash/cloneDeep";
-// combine
 const appReducer = combineReducers({});
 /**
  * reducer

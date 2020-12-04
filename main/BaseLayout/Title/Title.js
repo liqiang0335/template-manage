@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import styles from "./Title.scss";
 import css from "../Menu/Menu.scss";
 /**
-
  * 标题
  */
 export default function Title() {
