@@ -1,7 +1,8 @@
 import React, { useState, lazy, Suspense } from "react";
 import styles from "./CropperBox.scss";
-import getCoverPath from "@script/getCoverPath";
-const Crop = require("./Cropper");
+import getSrcPrefix from "@script/getSrcPrefix";
+import Cropper from "./Cropper";
+
 /**
  * @param {String} value - 图片回显路径
  * @param {Function} onChange(base64) - 裁切完成回调, 参数中包含base64格式图片
@@ -9,7 +10,7 @@ const Crop = require("./Cropper");
  * @param {Number,Optional} width - 图片的宽度, 默认260
  * @param {Object,Optional} cropper - cropper选项, 默认值 { aspectRatio: 16/9, viewMode:2, ...}
  */
-export default function Cropper(props) {
+export default function CropperBox(props) {
   const { name, onChange, value, ...rest } = props;
   const [file, setfile] = useState(null);
 
@@ -31,13 +32,13 @@ export default function Cropper(props) {
         </label>
       </div>
       <img
-        src={getCoverPath(value)}
+        src={getSrcPrefix(value)}
         className={styles.img}
         width="100%"
         style={{ maxWidth: props.width + "px" }}
       />
       <Suspense fallback={null}>
-        <Crop file={file} onSubmit={onChange} width={260} {...rest} />
+        <Cropper file={file} onSubmit={onChange} width={260} {...rest} />
       </Suspense>
     </div>
   );

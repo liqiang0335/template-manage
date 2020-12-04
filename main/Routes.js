@@ -1,16 +1,16 @@
 import React from "react";
-import { Route } from "react-router-dom";
-// pages
-import RoleList from "./pages/RoleList/RoleList";
-import UserList from "./pages/UserList/UserList";
+import { Route, Redirect } from "react-router-dom";
+import Home from "./pages/home/Home";
 /**
- *
+ * 路由
  */
 export default function Routes() {
   return (
     <>
-      <Route path="/user/list" component={UserList} />
-      <Route path="/role/list" component={RoleList} />
+      <Route path="/" exact>
+        <Redirect to="/home" />
+      </Route>
+      <Route path="/home" component={Home} />
     </>
   );
 }

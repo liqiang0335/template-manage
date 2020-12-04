@@ -1,4 +1,10 @@
 ### 用户列表
-GET {{base}}/user/items
+GET {{base}}/demo/items
 token:{{token}}
 
+POST {{base}}/demo/add
+token:{{token}}
+
+{
+  "name":"lili"
+}
