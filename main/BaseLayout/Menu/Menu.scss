@@ -70,7 +70,7 @@
 // Hignlight
 .active {
   background: $menu-active-bg-color;
-  border-right: 3px solid $menu-active-text-color;
+  border-right: 3px solid $menu-active-border-color;
   & > .name {
     color: $menu-active-text-color;
   }
