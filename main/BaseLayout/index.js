@@ -5,8 +5,10 @@ import Menu from "./Menu/Menu";
 import { HashRouter } from "react-router-dom";
 import { ConfigProvider } from "antd";
 import zhCN from "antd/es/locale/zh_CN";
+
 import "ynw/style/reset.css";
 import "../style/common.css";
+import "../style/antd-reset.scss";
 
 /**
  * 顶部
