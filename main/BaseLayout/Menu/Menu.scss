@@ -74,6 +74,9 @@
   & > .name {
     color: $menu-active-text-color;
   }
+  svg {
+    fill: $menu-active-icon-color;
+  }
 }
 
 .layer0,
