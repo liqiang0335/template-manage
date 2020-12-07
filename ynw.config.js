@@ -17,9 +17,8 @@ module.exports = {
     extractCSS: true,
     splitModules: false,
     cssModules: true,
-    dllPath: "",
     themePath: "",
-    dist: "",
+    publicPath: "./dist/",
     copy: [],
     devServer: {
       proxy: {
