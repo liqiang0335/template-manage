@@ -16,7 +16,7 @@ http.interceptors.request.use(config => {
 http.interceptors.response.use(
   function(res) {
     const body = res.data;
-    if (body.data == 1) {
+    if (body.code == 1) {
       return body.data;
     } else {
       message.error(body.message);
