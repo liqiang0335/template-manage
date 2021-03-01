@@ -1,4 +1,4 @@
-import { notification } from "antd";
+import { notification, message } from "antd";
 import axios from "axios";
 
 const http = axios.create({ baseURL: "/", timeout: 30000 });
@@ -15,7 +15,13 @@ http.interceptors.request.use(config => {
 
 http.interceptors.response.use(
   function(res) {
-    return res.data;
+    const body = res.data;
+    if (body.data == 1) {
+      return body.data;
+    } else {
+      message.error(body.message);
+      return Promise.reject();
+    }
   },
   function(err) {
     if (err.response) {
