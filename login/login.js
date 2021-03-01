@@ -1,4 +1,3 @@
-import "ynw/style/reset.css";
 import React from "react";
 import ReactDOM from "react-dom";
 import LoginForm from "./LoginForm/LoginForm";

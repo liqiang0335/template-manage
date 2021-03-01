@@ -1,11 +1,10 @@
 import React from "react";
 import { DownOutlined } from "@ant-design/icons";
 import css from "./Menu.scss";
-import MenuData from "../../config/Menus";
+import MenuData from "@const/MenuData";
 import { NavLink } from "react-router-dom";
 import * as Icons from "@ant-design/icons";
 import Logo from "../Logo/Logo";
-
 /**
  * 菜单栏
  */
