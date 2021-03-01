@@ -3,8 +3,6 @@
   "version": "1.0.0",
   "main": "",
   "scripts": {
-    "login-dev": "npx ynw build=login entry=login/login env=hot",
-    "login-pro": "npx ynw build=login entry=login/login env=pro",
     "main-dev": "npx ynw build=main entry=main/main env=hot",
     "main-pro": "npx ynw build=main entry=main/main env=pro"
   },
