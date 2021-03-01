@@ -5,6 +5,7 @@ import Menu from "./Menu/Menu";
 import { HashRouter } from "react-router-dom";
 import { ConfigProvider } from "antd";
 import zhCN from "antd/es/locale/zh_CN";
+import Title from "./Title/Title";
 
 import "ynw/style/reset.css";
 import "../style/common.css";
@@ -21,7 +22,10 @@ export default function Common({ children }) {
           <Menu />
           <div className={styles.detail}>
             <Header />
-            <div className={styles.contents}>{children}</div>
+            <div className={styles.contents}>
+              <Title></Title>
+              {children}
+            </div>
           </div>
         </div>
       </HashRouter>
